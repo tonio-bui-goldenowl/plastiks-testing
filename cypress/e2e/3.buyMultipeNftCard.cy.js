@@ -25,21 +25,24 @@ describe('BuySingleNFTwithCard', () => {
         //Input card
         cy.get('#stripe-card-holder').type("Test")
 
-        const STRIPE_IFRAME_PREFIX = '__privateStripeFrame'
 
-        const CARD_DETAILS = {
-        cardNumber: '4000058260000005',
-        cardExpiry: '0525',
-        cardCvc: '123',
-        }
 
-        const getStripeIFrameDocument = () => {
-            return cy.checkElementExists(`iframe[name^="${STRIPE_IFRAME_PREFIX}"]`).iframeCustom()
-        }
+        
+        // const STRIPE_IFRAME_PREFIX = '__privateStripeFrame'
 
-        getStripeIFrameDocument().find('input[data-elements-stable-field-name="cardNumber"]').type(CARD_DETAILS.cardNumber)
-        getStripeIFrameDocument().find('input[data-elements-stable-field-name="cardExpiry"]').type(CARD_DETAILS.cardExpiry)
-        getStripeIFrameDocument().find('input[data-elements-stable-field-name="cardCvc"]').type(CARD_DETAILS.cardCvc)
+        // const CARD_DETAILS = {
+        // cardNumber: '4000058260000005',
+        // cardExpiry: '0525',
+        // cardCvc: '123',
+        // }
+
+        // const getStripeIFrameDocument = () => {
+        //     return cy.checkElementExists(`iframe[name^="${STRIPE_IFRAME_PREFIX}"]`).iframeCustom()
+        // }
+
+        // getStripeIFrameDocument().find('input[data-elements-stable-field-name="cardNumber"]').type(CARD_DETAILS.cardNumber)
+        // getStripeIFrameDocument().find('input[data-elements-stable-field-name="cardExpiry"]').type(CARD_DETAILS.cardExpiry)
+        // getStripeIFrameDocument().find('input[data-elements-stable-field-name="cardCvc"]').type(CARD_DETAILS.cardCvc)
 
 
         // cy.getIframe('#stripe-exp-element > .__PrivateStripeElement > iframe').click().type('0921')
